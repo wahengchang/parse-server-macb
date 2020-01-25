@@ -6,7 +6,7 @@ const list = () => axios({
       "X-Parse-Application-Id": "APPLICATION_ID",
       "X-Parse-Master-Key": "MASTER_KEY"
     },
-    url: 'http://localhost:1337/graphql',
+    url: '/graphql',
     data: {
       query: `
       query getCatLv1 {
