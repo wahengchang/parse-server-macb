@@ -1,0 +1,48 @@
+{
+  "name": "parse-vue-spa-server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node script/generateEnv.js; vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "dev": "yarn kill:1337; yarn kill:8081; node script/generateEnv.js; ENV=dev & node server/index.js & vue-cli-service serve",
+    "heroku-postbuild": "npm run build",
+    "kill:1337": "kill $(lsof -t -i:1337)",
+    "kill:8081": "kill $(lsof -t -i:8081)",
+    "server:prod": "ENV=prod yarn build; ENV=prod node server/index.js",
+    "start": "yarn server:prod"
+  },
+  "dependencies": {
+    "@mdi/font": "^3.6.95",
+    "@parse/s3-files-adapter": "^1.4.0",
+    "axios": "^0.19.2",
+    "core-js": "^3.4.4",
+    "express": "^4.17.1",
+    "parse-dashboard": "^2.0.5",
+    "parse-server": "3.9.0",
+    "roboto-fontface": "*",
+    "sass-loader": "^8.0.2",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.3",
+    "vue-stash": "^2.0.1-beta",
+    "vuetify": "^2.1.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-e2e-nightwatch": "^4.1.0",
+    "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-plugin-unit-jest": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.3",
+    "chromedriver": "79",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "geckodriver": "^1.19.1",
+    "lint-staged": "^9.4.3",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
+    "vue-cli-plugin-vuetify": "^2.0.3",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
