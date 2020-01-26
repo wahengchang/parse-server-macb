@@ -1,6 +1,6 @@
 <template>
   <div class="catlv1Containter">
-    <p>Count： {{ count }}</p>
+    <div>共 {{ count }} 個</div>
     <div class="container">
       <v-data-table
         dense

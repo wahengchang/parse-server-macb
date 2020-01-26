@@ -1,7 +1,7 @@
 <template>
   <div class="catlv1Containter">
     <v-card-text>
-      <div>Category lv1: {{ count }}</div>
+      <div>共 {{ count }} 個</div>
     </v-card-text>
     <div class="container">
         <v-badge class='catlv1Item' v-for="(item, index) in catLv1List" :key='index' color="pink" :content="item.countCompany">

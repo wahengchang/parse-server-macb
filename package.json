@@ -9,6 +9,7 @@
     "heroku-postbuild": "npm run build",
     "kill:1337": "kill $(lsof -t -i:1337)",
     "kill:8081": "kill $(lsof -t -i:8081)",
+    "kill:8082": "kill $(lsof -t -i:8082)",
     "server:prod": "ENV=prod yarn build; ENV=prod node server/index.js",
     "start": "yarn server:prod"
   },

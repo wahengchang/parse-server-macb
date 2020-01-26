@@ -11,20 +11,49 @@
       </v-dialog>
 
       <div id="app">
-        <div id="nav">
-          <router-link to="/">Home</router-link> |
-          <router-link to="/login">Login</router-link> |
-          <router-link to="/logout">Logout</router-link> |
-          <router-link to="/secret">Secret</router-link> |
-        </div>
-        <router-view/>
+        <v-app-bar
+          app
+          color="indigo"
+          dark
+        >
+          <v-toolbar-title>Application</v-toolbar-title>
+          <v-spacer></v-spacer>
+
+          <v-btn text>
+            <router-link to="/">Home</router-link> 
+          </v-btn>
+          <v-btn text v-if="!user">
+            <router-link to="/login">Login</router-link> 
+          </v-btn>
+          <v-btn text v-if="!!user">
+            <router-link to="/logout">Logout</router-link> 
+          </v-btn>
+          <v-btn text v-if="!!user">
+            <router-link to="/secret">Secret</router-link> 
+          </v-btn>
+        </v-app-bar>
+
+
+        <v-content>
+          <v-container
+            class="fill-height"
+            fluid
+          >
+          <router-view/>
+          </v-container>
+        </v-content>
       </div>
     </v-layout>
   </v-app>
 </template>
 <script>
+import Parse from 'parse'
+
 export default {
   computed: {
+    user: function() {
+      return Parse.User.current()
+    },
     isLoading: function() {
       return this.$store.system.isLoading
     },
