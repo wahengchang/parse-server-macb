@@ -19,18 +19,17 @@
           <v-toolbar-title>Application</v-toolbar-title>
           <v-spacer></v-spacer>
 
-          <v-btn text>
-            <router-link to="/">Home</router-link> 
-          </v-btn>
-          <v-btn text v-if="!user">
-            <router-link to="/login">Login</router-link> 
-          </v-btn>
-          <v-btn text v-if="!!user">
-            <router-link to="/logout">Logout</router-link> 
-          </v-btn>
-          <v-btn text v-if="!!user">
-            <router-link to="/secret">Secret</router-link> 
-          </v-btn>
+          <div v-if="!!user">
+            <v-btn text>
+              <router-link to="/">Home</router-link> 
+            </v-btn>
+            <v-btn text>
+              <router-link to="/logout">Logout</router-link> 
+            </v-btn>
+            <v-btn text>
+              <router-link to="/secret">Secret</router-link> 
+            </v-btn>
+          </div>
         </v-app-bar>
 
 

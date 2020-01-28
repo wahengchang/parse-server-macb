@@ -37,7 +37,7 @@ const routes = [
   {
     path: '/secret',
     name: 'secret',
-    meta: {permission: requiredLogin},
+    meta: {permission: requiredPublic},
     component: Secret
   },
   {

@@ -73,10 +73,12 @@ export default {
     try {
       this.$store.system.isLoading = true
       const user = Parse.User.current()
-      const {username, createdAt, email} = user.toJSON()
-      this.username = username
-      this.createdAt = createdAt
-      this.email = email
+      if(user) {
+        const {username, createdAt, email} = user.toJSON()
+        this.username = username
+        this.createdAt = createdAt
+        this.email = email
+      }
 
       const resultLv1 = await catLv1.list()
       this.catLv1Data = resultLv1.data.data.categoryLv1s
