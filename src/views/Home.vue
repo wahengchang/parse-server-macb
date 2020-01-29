@@ -51,12 +51,6 @@ import CatLv1Component from '@/components/CatLv1'
 import CatLv2Component from '@/components/CatLv2'
 import CompanyComponent from '@/components/Company'
 
-const sleep = (n=1) => new Promise((resolve)=> {
-  return setTimeout(() => {
-    return resolve()
-  }, n*1000);
-})
-
 export default {
   name: "home",
   data() {
@@ -102,7 +96,7 @@ export default {
       this.catLv2Data = null
       this.companyData = null
 
-      await sleep()
+      await this.$sleep()
 
       const targetLv1 = this.catLv1Data.results.find(item=>item.id===id)
       this.catLv2Data = targetLv1.children

@@ -4,10 +4,13 @@ import router from './router'
 import store from './store';
 import "@/lib/parse";
 import vuetify from './plugins/vuetify';
+import globalPlugin from './plugins/global';
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
 
 Vue.config.productionTip = false
+
+Vue.use(globalPlugin)
 
 new Vue({
   router,

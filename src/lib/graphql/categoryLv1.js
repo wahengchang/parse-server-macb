@@ -15,6 +15,8 @@ const list = () => axios({
           results {
             id
             title
+            createdAt
+            updatedAt
             children {
               count 
               results {

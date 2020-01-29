@@ -24,14 +24,16 @@
               <router-link to="/">Home</router-link> 
             </v-btn>
             <v-btn text>
-              <router-link to="/logout">Logout</router-link> 
+              <router-link to="/catLv1">CatLv1</router-link> 
             </v-btn>
             <v-btn text>
               <router-link to="/secret">Secret</router-link> 
             </v-btn>
+            <v-btn text>
+              <router-link to="/logout">Logout</router-link> 
+            </v-btn>
           </div>
         </v-app-bar>
-
 
         <v-content>
           <v-container

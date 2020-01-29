@@ -5,8 +5,9 @@
   "scripts": {
     "build": "node script/generateEnv.js; vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "yarn kill:1337; yarn kill:8081; node script/generateEnv.js; ENV=dev & node server/index.js & vue-cli-service serve",
+    "dev": "yarn kill; node script/generateEnv.js; ENV=dev & node server/index.js & vue-cli-service serve",
     "heroku-postbuild": "npm run build",
+    "kill": "yarn kill:1337; yarn kill:8081; yarn kill:8082",
     "kill:1337": "kill $(lsof -t -i:1337)",
     "kill:8081": "kill $(lsof -t -i:8081)",
     "kill:8082": "kill $(lsof -t -i:8082)",
