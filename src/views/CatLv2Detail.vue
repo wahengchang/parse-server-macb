@@ -16,7 +16,7 @@
       <div>
         <div v-if='catLv2Data.children.results' class='cardContainer'>
             <h3> 公司 </h3>
-              <router-link :to='`/catLv2/${item.id}`' v-for='(item, index) in catLv2Data.children.results' class='row rowContainer' :key='index'>
+              <router-link :to='`/company/${item.id}`' v-for='(item, index) in catLv2Data.children.results' class='row rowContainer' :key='index'>
                 <div class='rowCell'>{{item.title}}</div>
                 <!-- <div class='rowCell'>{{item.children.count}}</div> -->
                 <!-- <div class='rowCell'>{{_easyReadDateFormat(item.createdAt)}}</div> -->

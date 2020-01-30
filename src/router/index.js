@@ -9,6 +9,7 @@ import Logout from '../views/Logout.vue'
 import CatLv1 from '../views/CatLv1.vue'
 import CatLv1Detail from '../views/CatLv1Detail.vue'
 import CatLv2Detail from '../views/CatLv2Detail.vue'
+import CompanyDetail from '../views/CompanyDetail.vue'
 import Parse from 'parse'
 
 const requiredLogin = 'REQUIRED_LOGIN'
@@ -48,6 +49,12 @@ const routes = [
     name: 'catlv2Detail',
     meta: {permission: requiredLogin},
     component: CatLv2Detail
+  },
+  {
+    path: '/company/:id',
+    name: 'companyDetail',
+    meta: {permission: requiredLogin},
+    component: CompanyDetail
   },
   {
     path: '/logout',

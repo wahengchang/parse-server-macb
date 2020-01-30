@@ -68,7 +68,7 @@ export default {
 
 <style scoped>
 .loginInput{
-    width: 400px;
+    width: 500px;
 }
 .reactiveButton {
     border: 1px gray solid;
